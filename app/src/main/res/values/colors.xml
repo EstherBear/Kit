@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D32F2F</color>
+    <color name="colorPrimaryWhite">#FFFFFF</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="control_background">#cc4285f4</color>
+    <color name="selection_highlight">#aaaaaa</color>
+    <color name="selection_focus">#eeaa55</color>
+    <color name="item_normal">#eeeeee</color>
+
+</resources>

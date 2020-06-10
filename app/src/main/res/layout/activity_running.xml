@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RunningActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/AppTheme" />
+
+    <Button
+        android:id="@+id/CPR_restart_button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/button_round1"
+        android:text="@string/restart"
+        android:textAppearance="?android:textAppearanceLarge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/CPR_pause_resume_button" />
+
+    <Button
+        android:id="@+id/CPR_pause_resume_button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/button_round1"
+        android:text="@string/pause"
+        android:textAppearance="?android:textAppearanceLarge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/CPR_restart_button"
+        app:layout_constraintRight_toLeftOf="@id/CPR_stop_button" />
+
+    <Button
+        android:id="@+id/CPR_stop_button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/button_round2"
+        android:text="@string/exit"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/CPR_pause_resume_button"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/CPR_forward_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/fore"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/CPR_stop_button"
+        app:layout_constraintHorizontal_chainStyle="spread"
+
+        app:layout_constraintLeft_toRightOf="@id/CPR_backward_button"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/CPR_backward_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/back"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/CPR_pause_resume_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/CPR_forward_button" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintBottom_toTopOf="@id/CPR_forward_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/curTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="12dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintBottom_toTopOf="@id/seekBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:text="0 min, 0 sec" />
+
+    <TextView
+        android:id="@+id/endTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="12dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintBottom_toTopOf="@id/seekBar"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="0 min, 0 sec" />
+
+    <TextView
+        android:id="@+id/totalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/total_time"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chronometer" />
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="256dp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/clock"
+        android:src="@drawable/ic_timer"
+        app:layout_constraintBottom_toTopOf="@id/chronometer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
