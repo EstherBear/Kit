@@ -166,10 +166,19 @@ public class RunningActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onDestroy() {
+        super.onDestroy();
         releaseCPRPlayer();
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (cprPlayer.isPlaying()) {
+            cprPlayer.pause();
+            prCPRButton.setText(R.string.resume);
+        }
+    }
+
 
     private void releaseCPRPlayer() {
         myHandler.removeCallbacks(UpdateSongTime);
